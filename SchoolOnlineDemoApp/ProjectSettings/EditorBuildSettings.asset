@@ -6,6 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Login.unity
+    guid: 2583bdc6c7dec524793c2f9d03a5ebe1
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 89f1018f1a3f42d439445e9e5ad78c7d
+  - enabled: 1
+    path: Assets/Scenes/EnglishMenu.unity
+    guid: ee85185960af64543bf01da37ccd6255
+  - enabled: 1
+    path: Assets/Scenes/MathsMenu.unity
+    guid: 821e7fc7c1a9ed34093bc46965b243ea
+  - enabled: 1
+    path: Assets/Scenes/DragDrop.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Linking.unity
+    guid: c79ca3968d790c249a9d899d1a3b3ae7
+  - enabled: 1
+    path: Assets/Scenes/Calculate.unity
+    guid: ede804e34c4a23a49b465bfc7cbf41ff
+  - enabled: 1
+    path: Assets/Scenes/Sentence Finish.unity
+    guid: af4ab4c61d2f817489aec5e66b275d6a
+  - enabled: 1
+    path: Assets/Scenes/Opposite.unity
+    guid: 9ad53dd19c06002439c6d6939103bbcf
   m_configObjects: {}

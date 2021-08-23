@@ -7,17 +7,12 @@ public class Attaching : MonoBehaviour
     SpriteRenderer Change_color;
     bool checker = false;
     public string identifier = "";
+    public bool attached = false;
+    public string answer = "";
     // Start is called before the first frame update
     void Start()
     {
         Change_color = GetComponent<SpriteRenderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        //Change_color.color = Color.green;
     }
 
     public void Check()
@@ -26,6 +21,14 @@ public class Attaching : MonoBehaviour
         if (checker)
         {
             Change_color.color = Color.green;
+        }
+        else if (identifier == answer)
+        {
+            Change_color.color = Color.green;
+        }
+        else
+        {
+            Change_color.color = Color.red;
         }
     }
 

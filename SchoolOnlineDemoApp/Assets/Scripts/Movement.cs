@@ -39,9 +39,4 @@ public class Movement : MonoBehaviour
 
     }
 
-    void raycast(GameObject game)
-    {
-       
-    }
-
 }
