@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public int DefaultNum;
     public bool submit = false;
+    public bool RandomBool = false;
     GameObject[] boxes;
     public static GameManager Instance
     {
@@ -50,6 +52,26 @@ public class GameManager : MonoBehaviour
                 box.GetComponent<Attaching>().Check();
             }
         }
+    }
+
+    int RandomNumber()
+    {
+        int number = Random.Range(0, 13);
+        return number;
+    }
+
+    public int QuestionCreateMultiplyRandom()
+    {
+        return RandomNumber();
+    }
+    public void DefaultChange(int num)
+    {
+        DefaultNum = num;
+        RandomBool = false;
+    }
+    public void RandomActivator()
+    {
+        RandomBool = true;
     }
 
 }

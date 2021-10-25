@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Opposite.unity
     guid: 9ad53dd19c06002439c6d6939103bbcf
+  - enabled: 1
+    path: Assets/Scenes/Minigame_boardgame.unity
+    guid: 55cf4d1ad14f8074c93e164578fbb7b3
   m_configObjects: {}

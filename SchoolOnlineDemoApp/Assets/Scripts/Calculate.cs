@@ -9,26 +9,28 @@ public class Calculate : MonoBehaviour
     public int match;
     public Image image;
 
-    private void Awake()
+    public GameObject parentDelete;
+
+
+    public Text text;
+
+    private void Start()
     {
-        text = gameObject.GetComponent<Text>();
-        text.text = "";
-    }
-    private Text text;
-    // Start is called before the first frame update
-    void Start()
-    {
+        image.color = new Color32(255, 255, 255, 255);
+        Reset();
     }
 
     // Update is called once per frame
-    void Update()
+    public void Reset()
     {
-        
+        text.text = "";
+        image.color = new Color32(255, 255, 255, 255);
     }
 
     public void Number_Add(string add)
     {
         text.text += add;
+        image.color = new Color32(255, 255, 255, 255);
     }
 
     public void Number_Remove()
@@ -42,9 +44,12 @@ public class Calculate : MonoBehaviour
         if (answer == match)
         {
             image.color = new Color32(0, 128, 0, 255);
+            parentDelete.GetComponent<QuestionCreate>().delete_Instance = true;
         }
         else
         {
+
+            text.text = "";
             image.color = new Color32(255, 0, 0, 255);
         }
     }
