@@ -8,6 +8,7 @@ public class Creator : MonoBehaviour
     private GameObject instant;
     private bool created = false;
     public bool hidden = false;
+    public string sign;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class Creator : MonoBehaviour
         {
             instant = Instantiate(prefab, new Vector2(Screen.width/9, Screen.height/8f), gameObject.transform.rotation);
             instant.transform.SetParent(gameObject.transform);
+            instant.GetComponent<QuestionCreate>().Appear(sign);
             created = true;
         }
     }

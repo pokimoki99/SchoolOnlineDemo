@@ -7,7 +7,11 @@ using UnityEngine.UI;
 public class QuestionCreate : MonoBehaviour
 {
     public string questionDefault, questionText;
+
     GameManager game;
+    miniGame_GameManager Minigame;
+    bool minigame_bool=false;
+
     public Text text;
     string identifier = "(input)";
     string defaultNumber = "(default)";
@@ -25,7 +29,6 @@ public class QuestionCreate : MonoBehaviour
     void Awake()
     {
 
-        game = GameObject.Find("GameManager").GetComponent<GameManager>();
 
         
     }
@@ -81,26 +84,67 @@ public class QuestionCreate : MonoBehaviour
     }
     void input()
     {
-        if (game.RandomBool)
+
+        if (GameObject.Find("GameManager"))
         {
-            y = GetRandom();
-            text.text = questionDefault.Replace(identifier, x.ToString()); ///worked on
-            questionAnswer.match = x * y;
+            game = GameObject.Find("GameManager").GetComponent<GameManager>();
         }
         else
         {
-            text.text = questionDefault.Replace(identifier, x.ToString()).Replace(defaultNumber, questionNumber.ToString());
-            Debug.Log(x);
-            //text.text = questionDefault.Replace(defaultNumber, questionNumber.ToString());
-            questionAnswer.match = x * questionNumber;
+            minigame_bool = true;
+            Minigame = GameObject.Find("miniGame_GameManager").GetComponent<miniGame_GameManager>();
+        }
+
+        if (!minigame_bool)
+        {
+            if (game.RandomBool)
+            {
+
+                y = GetRandom();
+                text.text = questionDefault.Replace(identifier, x.ToString()); ///worked on
+                questionAnswer.match = x * y;
+            }
+            else
+            {
+                text.text = questionDefault.Replace(identifier, x.ToString()).Replace(defaultNumber, questionNumber.ToString());
+                Debug.Log(x);
+                //text.text = questionDefault.Replace(defaultNumber, questionNumber.ToString());
+                questionAnswer.match = x * questionNumber;
+            }
+        }
+        else
+        {
+            if (Minigame.RandomBool)
+            {
+
+                y = GetRandom();
+                text.text = questionDefault.Replace(identifier, x.ToString()); ///worked on
+                questionAnswer.match = x * y;
+            }
+            else
+            {
+                text.text = questionDefault.Replace(identifier, x.ToString()).Replace(defaultNumber, questionNumber.ToString());
+                Debug.Log(x);
+                //text.text = questionDefault.Replace(defaultNumber, questionNumber.ToString());
+                questionAnswer.match = x * questionNumber;
+            }
         }
 
     }
 
     int GetRandom()
     {
-        game = GameObject.Find("GameManager").GetComponent<GameManager>();
-        return game.QuestionCreateMultiplyRandom();
+
+        if (GameObject.Find("GameManager"))
+        {
+            game = GameObject.Find("GameManager").GetComponent<GameManager>();
+            return game.QuestionCreateMultiplyRandom();
+        }
+        else
+        {
+            Minigame = GameObject.Find("miniGame_GameManager").GetComponent<miniGame_GameManager>();
+            return Minigame.QuestionCreateMultiplyRandom();
+        }
     }
 
     

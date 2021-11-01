@@ -33,6 +33,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Opposite.unity
     guid: 9ad53dd19c06002439c6d6939103bbcf
   - enabled: 1
-    path: Assets/Scenes/Minigame_boardgame.unity
+    path: Assets/Scenes/template for Minigames.unity
     guid: 55cf4d1ad14f8074c93e164578fbb7b3
+  - enabled: 1
+    path: Assets/Scenes/Minigame/Character_Select.unity
+    guid: e3cc862c3d26b64409589e6398c7bdce
+  - enabled: 1
+    path: Assets/Scenes/Minigame/Minigame.unity
+    guid: ef4109228b8749e4394bfc9a238fd106
   m_configObjects: {}
